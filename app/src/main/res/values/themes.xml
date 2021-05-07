@@ -1,0 +1,33 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.MyClockApp" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/my_purple</item>
+        <item name="colorPrimaryVariant">@color/my_purple</item>
+        <item name="colorOnPrimary">@color/my_purple</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/very_orange</item>
+        <item name="colorSecondaryVariant">@color/lighter_orange</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+        <item name="android:textColorSecondary">@color/white</item>
+    </style>
+
+    <style name="TabLayoutStyle" >
+        <item name="tabIconTint">@drawable/tab_layout_selector</item>
+        <item name="iconSize">25dp</item>
+    </style>
+
+    <style name="preferenceTheme" parent = "Theme.MaterialComponents.Light.DarkActionBar">
+        <item name="android:background">@color/my_purple</item>
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
+        <item name="colorSecondary">@color/very_orange</item>
+        <item name="colorSecondaryVariant">@color/lighter_orange</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textColorSecondary">@color/white</item>
+
+    </style>
+</resources>

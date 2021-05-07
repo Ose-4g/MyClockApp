@@ -1,0 +1,72 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory app:title="@string/clock"
+        app:iconSpaceReserved="false">
+
+        <ListPreference
+            app:iconSpaceReserved="false"
+            app:key="clock_style"
+            app:title="@string/style"
+            app:entryValues="@array/clock_style"
+            app:entries="@array/clock_style"
+            app:useSimpleSummaryProvider="true" />
+
+
+        <SwitchPreferenceCompat
+            app:iconSpaceReserved="false"
+            app:key="display_seconds"
+            app:title="@string/display_time_seconds" />
+
+        <SwitchPreferenceCompat
+            app:iconSpaceReserved="false"
+            app:dependency="sync"
+            app:key="automaticClock"
+            app:summaryOff="@string/attachment_summary_off"
+            app:summaryOn="@string/attachment_summary_on"
+            app:title="@string/auto_home_clock" />
+
+        <Preference app:iconSpaceReserved="false"
+            app:title="@string/change_date_time"
+            app:key="set_date_and_time">
+
+        </Preference>
+
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/alarms"
+        app:iconSpaceReserved="false">
+
+        <SwitchPreferenceCompat
+            app:iconSpaceReserved="false"
+            app:key="sync"
+            app:title="@string/sync_title" />
+
+        <SwitchPreferenceCompat
+            app:iconSpaceReserved="false"
+            app:dependency="sync"
+            app:key="attachment"
+            app:summaryOff="@string/attachment_summary_off"
+            app:summaryOn="@string/attachment_summary_on"
+            app:title="@string/attachment_title" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/timers"
+        app:iconSpaceReserved="false">
+        <SwitchPreferenceCompat
+            app:iconSpaceReserved="false"
+            app:key="sync"
+            app:title="@string/sync_title" />
+
+        <SwitchPreferenceCompat
+            app:iconSpaceReserved="false"
+            app:dependency="sync"
+            app:key="attachment"
+            app:summaryOff="@string/attachment_summary_off"
+            app:summaryOn="@string/attachment_summary_on"
+            app:title="@string/attachment_title" />
+    </PreferenceCategory>
+
+</PreferenceScreen>
