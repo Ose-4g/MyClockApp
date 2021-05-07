@@ -6,25 +6,37 @@
 
         <ListPreference
             app:iconSpaceReserved="false"
-            app:key="clock_style"
+            app:key="@string/key_clock_style"
             app:title="@string/style"
             app:entryValues="@array/clock_style"
             app:entries="@array/clock_style"
-            app:useSimpleSummaryProvider="true" />
+            app:useSimpleSummaryProvider="true"
+            app:defaultValue=""/>
 
 
         <SwitchPreferenceCompat
             app:iconSpaceReserved="false"
-            app:key="display_seconds"
+            app:key="@string/key_display_seconds"
             app:title="@string/display_time_seconds" />
 
+
         <SwitchPreferenceCompat
             app:iconSpaceReserved="false"
-            app:dependency="sync"
-            app:key="automaticClock"
+            app:key="@string/key_automatic_clock"
             app:summaryOff="@string/attachment_summary_off"
             app:summaryOn="@string/attachment_summary_on"
             app:title="@string/auto_home_clock" />
+
+        <ListPreference
+            app:key="home_time_zone"
+            app:title="@string/home_time_zone"
+            app:dependency="@string/key_automatic_clock"
+            app:entryValues="@array/clock_style"
+            app:entries="@array/clock_style"
+            app:useSimpleSummaryProvider="true"
+            app:iconSpaceReserved="false" />
+
+
 
         <Preference app:iconSpaceReserved="false"
             app:title="@string/change_date_time"
@@ -38,28 +50,55 @@
     <PreferenceCategory app:title="@string/alarms"
         app:iconSpaceReserved="false">
 
-        <SwitchPreferenceCompat
+        <ListPreference
             app:iconSpaceReserved="false"
-            app:key="sync"
-            app:title="@string/sync_title" />
+            app:key="@string/key_silence_after"
+            app:title="@string/silence_after"
+            app:entries="@array/silence_after_entries"
+            app:entryValues="@array/silence_after_values"
+            app:useSimpleSummaryProvider="true"/>
 
-        <SwitchPreferenceCompat
+        <ListPreference
             app:iconSpaceReserved="false"
-            app:dependency="sync"
-            app:key="attachment"
-            app:summaryOff="@string/attachment_summary_off"
-            app:summaryOn="@string/attachment_summary_on"
-            app:title="@string/attachment_title" />
+            app:key="@string/key_snooze_length"
+            app:title="@string/snooze_length"
+            app:entries="@array/snooze_length_entries"
+            app:entryValues="@array/snooze_length_values"
+            app:useSimpleSummaryProvider="true"/>
+
+        <Preference
+            app:iconSpaceReserved="false"
+            app:key="@string/key_alarm_volume"
+            app:title="@string/alarm_volume"/>
+
+        <ListPreference
+            app:iconSpaceReserved="false"
+            app:key="@string/key_volume_buttons"
+            app:title="@string/volume_buttons"
+            app:entries="@array/volume_buttons_entries"
+            app:entryValues="@array/volume_buttons_values"
+            app:useSimpleSummaryProvider="true"/>
+
+        <ListPreference
+            app:iconSpaceReserved="false"
+            app:key="@string/key_start_week_on"
+            app:title="@string/start_week_on"
+            app:entries="@array/start_week_day_entries"
+            app:entryValues="@array/start_week_day_values"
+            app:useSimpleSummaryProvider="true"/>
 
     </PreferenceCategory>
 
     <PreferenceCategory app:title="@string/timers"
         app:iconSpaceReserved="false">
+        <Preference
+            app:title="ringtone"
+            app:iconSpaceReserved="false"
+            app:key="ringtone"/>
         <SwitchPreferenceCompat
             app:iconSpaceReserved="false"
             app:key="sync"
             app:title="@string/sync_title" />
-
         <SwitchPreferenceCompat
             app:iconSpaceReserved="false"
             app:dependency="sync"
@@ -68,5 +107,6 @@
             app:summaryOn="@string/attachment_summary_on"
             app:title="@string/attachment_title" />
     </PreferenceCategory>
+
 
 </PreferenceScreen>

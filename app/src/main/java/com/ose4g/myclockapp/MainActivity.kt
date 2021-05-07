@@ -39,15 +39,24 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+
+    //creating the options menu
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
 
         menuInflater.inflate(R.menu.main_menu, menu)
         return true
     }
 
+    //setting the options menu function
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-
-        startActivity(Intent(this@MainActivity,SettingsActivity::class.java))
+        when(item.itemId)
+        {
+            R.id.action_intelligent_voice ->{}
+            R.id.action_settings ->{
+                startActivity(Intent(this@MainActivity,SettingsActivity::class.java))
+                return true
+            }
+        }
         return true
     }
 }

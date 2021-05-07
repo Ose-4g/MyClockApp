@@ -1,6 +1,7 @@
 package com.ose4g.myclockapp
 
 import android.content.Intent
+import android.media.RingtoneManager
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
@@ -23,6 +24,7 @@ class SettingsActivity : AppCompatActivity() {
         }
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
+        supportActionBar?.elevation = 0f
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -35,22 +37,41 @@ class SettingsActivity : AppCompatActivity() {
     class SettingsFragment : PreferenceFragmentCompat() {
 
         lateinit var openSettings: ActivityResultLauncher<Intent>
+        lateinit var openRingtones: ActivityResultLauncher<Intent>
+
         override fun onCreate(savedInstanceState: Bundle?) {
             super.onCreate(savedInstanceState)
 
             openSettings =   registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
             }
 
+            openRingtones =   registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
+            }
+
         }
 
         override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
             setPreferencesFromResource(R.xml.root_preferences, rootKey)
+
             var setTime = findPreference<Preference>("set_date_and_time")
             setTime?.onPreferenceClickListener = Preference.OnPreferenceClickListener {
                 openSettings.launch(Intent(android.provider.Settings.ACTION_DATE_SETTINGS))
                 true
             }
 
+            var ringtone = findPreference<Preference>("ringtone")
+            ringtone?.onPreferenceClickListener = Preference.OnPreferenceClickListener {
+                Log.i("clicking in the main", "click click")
+                val manager = RingtoneManager(requireActivity())
+                manager.setType(RingtoneManager.TYPE_RINGTONE)
+                val cursor = manager.cursor
+                while(cursor.moveToNext())
+                {
+                    Log.i("RINGTONE", cursor.getString(RingtoneManager.TITLE_COLUMN_INDEX))
+                    Log.i("URI-RINGTONE", cursor.getString(RingtoneManager.URI_COLUMN_INDEX)+"/"+ cursor.getString(RingtoneManager.ID_COLUMN_INDEX))
+                }
+                true
+            }
         }
 
     }

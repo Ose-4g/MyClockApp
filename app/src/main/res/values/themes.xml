@@ -20,14 +20,25 @@
         <item name="iconSize">25dp</item>
     </style>
 
+    <style name="DialogTheme" parent="Theme.MaterialComponents.DayNight.Dialog">
+        <item name="colorPrimary">@color/very_orange</item>
+        <item name="colorSecondary">@color/very_orange</item>
+        <item name="android:textColor">@color/very_orange</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:textColorSecondary">@color/black</item>
+
+    </style>
+
     <style name="preferenceTheme" parent = "Theme.MaterialComponents.Light.DarkActionBar">
         <item name="android:background">@color/my_purple</item>
         <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
         <item name="colorSecondary">@color/very_orange</item>
         <item name="colorSecondaryVariant">@color/lighter_orange</item>
         <item name="colorOnSecondary">@color/white</item>
-        <item name="android:textColor">@color/white</item>
-        <item name="android:textColorSecondary">@color/white</item>
-
+        <item name="android:textColor">@drawable/settings_text_color</item>
+        <item name="android:textColorSecondary">@drawable/settings_text_color</item>
+        <item name="alertDialogTheme">@style/DialogTheme</item>
+        <item name="android:divider">@color/white</item>
     </style>
 </resources>
