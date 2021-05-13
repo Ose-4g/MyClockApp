@@ -11,10 +11,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyClockApp">
         <activity
-            android:name=".SettingsActivity"
+            android:name=".activities.SettingsActivity"
             android:label="@string/title_activity_settings"
-            android:theme="@style/preferenceTheme"></activity>
-        <activity android:name=".MainActivity">
+            android:theme="@style/preferenceTheme" />
+        <activity android:name=".activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

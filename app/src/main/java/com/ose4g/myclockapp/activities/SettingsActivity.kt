@@ -1,4 +1,4 @@
-package com.ose4g.myclockapp
+package com.ose4g.myclockapp.activities
 
 import android.content.Intent
 import android.media.RingtoneManager
@@ -10,6 +10,11 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
+import com.ose4g.myclockapp.R
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
+
+@AndroidEntryPoint
 
 class SettingsActivity : AppCompatActivity() {
 
@@ -25,6 +30,8 @@ class SettingsActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
         supportActionBar?.elevation = 0f
+
+
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
