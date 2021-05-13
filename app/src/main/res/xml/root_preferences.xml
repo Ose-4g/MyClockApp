@@ -28,7 +28,7 @@
             app:title="@string/auto_home_clock" />
 
         <ListPreference
-            app:key="home_time_zone"
+            app:key="@string/key_home_time_zone"
             app:title="@string/home_time_zone"
             app:dependency="@string/key_automatic_clock"
             app:entryValues="@array/clock_style"
@@ -40,7 +40,7 @@
 
         <Preference app:iconSpaceReserved="false"
             app:title="@string/change_date_time"
-            app:key="set_date_and_time">
+            app:key="@string/key_set_day_time">
 
         </Preference>
 
@@ -92,13 +92,15 @@
     <PreferenceCategory app:title="@string/timers"
         app:iconSpaceReserved="false">
         <Preference
-            app:title="ringtone"
+            app:title="@string/ringtone"
             app:iconSpaceReserved="false"
-            app:key="ringtone"/>
+            app:key="@string/key_timer_ringtone"/>
+
         <SwitchPreferenceCompat
             app:iconSpaceReserved="false"
             app:key="sync"
             app:title="@string/sync_title" />
+
         <SwitchPreferenceCompat
             app:iconSpaceReserved="false"
             app:dependency="sync"

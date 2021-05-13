@@ -40,6 +40,10 @@
     <string name="volume_buttons">Volume Buttons</string>
     <string name="start_week_on">Start week on</string>
     <string name="key_start_week_on">start_week_on</string>
+    <string name="key_home_time_zone">home_time_zone</string>
+    <string name="key_set_day_time">set_date_and_time</string>
+    <string name="ringtone">Ringtone</string>
+    <string name="key_timer_ringtone">key_timer_ringtone</string>
 
     <string-array name="clock_style">
         <item>Analog</item>

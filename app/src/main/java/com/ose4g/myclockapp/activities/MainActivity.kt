@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.tabs.TabLayoutMediator
@@ -29,10 +30,7 @@ class MainActivity : AppCompatActivity() ,Constants{
         super.onCreate(savedInstanceState)
         //use data binding
         viewModel = ViewModelProvider(this).get(MainActivityViewModel::class.java)
-
-        Log.i("seenin",viewModel.preferences.getString(
-            getString(KEY_CLOCK_STYLE),
-            "")!!)
+        Log.i("seenin",viewModel.preferences.getClockStyle()!!)
 
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)

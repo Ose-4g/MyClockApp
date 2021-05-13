@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import com.ose4g.myclockapp.R
+import com.ose4g.myclockapp.utlis.Constants
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -41,7 +42,7 @@ class SettingsActivity : AppCompatActivity() {
         return true
     }
 
-    class SettingsFragment : PreferenceFragmentCompat() {
+    class SettingsFragment : PreferenceFragmentCompat() , Constants{
 
         lateinit var openSettings: ActivityResultLauncher<Intent>
         lateinit var openRingtones: ActivityResultLauncher<Intent>
@@ -60,13 +61,14 @@ class SettingsActivity : AppCompatActivity() {
         override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
             setPreferencesFromResource(R.xml.root_preferences, rootKey)
 
-            var setTime = findPreference<Preference>("set_date_and_time")
+            var setTime = findPreference<Preference>(getString(KEY_SET_DAY_TIME))
             setTime?.onPreferenceClickListener = Preference.OnPreferenceClickListener {
                 openSettings.launch(Intent(android.provider.Settings.ACTION_DATE_SETTINGS))
                 true
             }
 
-            var ringtone = findPreference<Preference>("ringtone")
+
+            var ringtone = findPreference<Preference>(getString(KEY_TIMER_RINGTONE))
             ringtone?.onPreferenceClickListener = Preference.OnPreferenceClickListener {
                 Log.i("clicking in the main", "click click")
                 val manager = RingtoneManager(requireActivity())
