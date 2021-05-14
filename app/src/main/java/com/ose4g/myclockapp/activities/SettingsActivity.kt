@@ -8,6 +8,7 @@ import android.view.MenuItem
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.preference.ListPreference
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import com.ose4g.myclockapp.R
@@ -79,6 +80,13 @@ class SettingsActivity : AppCompatActivity() {
                     Log.i("RINGTONE", cursor.getString(RingtoneManager.TITLE_COLUMN_INDEX))
                     Log.i("URI-RINGTONE", cursor.getString(RingtoneManager.URI_COLUMN_INDEX)+"/"+ cursor.getString(RingtoneManager.ID_COLUMN_INDEX))
                 }
+                true
+            }
+
+
+            var clockStyle = findPreference<ListPreference>(getString(KEY_CLOCK_STYLE))
+            clockStyle?.setOnPreferenceChangeListener { preference, newValue ->
+                Log.i("clock_style",newValue.toString())
                 true
             }
         }

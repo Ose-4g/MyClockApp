@@ -8,8 +8,8 @@
             app:iconSpaceReserved="false"
             app:key="@string/key_clock_style"
             app:title="@string/style"
-            app:entryValues="@array/clock_style"
-            app:entries="@array/clock_style"
+            app:entryValues="@array/clock_style_values"
+            app:entries="@array/clock_style_entries"
             app:useSimpleSummaryProvider="true"
             app:defaultValue=""/>
 
@@ -31,8 +31,8 @@
             app:key="@string/key_home_time_zone"
             app:title="@string/home_time_zone"
             app:dependency="@string/key_automatic_clock"
-            app:entryValues="@array/clock_style"
-            app:entries="@array/clock_style"
+            app:entryValues="@array/clock_style_entries"
+            app:entries="@array/clock_style_entries"
             app:useSimpleSummaryProvider="true"
             app:iconSpaceReserved="false" />
 

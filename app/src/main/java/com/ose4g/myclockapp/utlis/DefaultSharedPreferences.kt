@@ -8,9 +8,9 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 
 class DefaultSharedPreferences
-@Inject constructor(@ApplicationContext val context: Context) : Constants
+@Inject constructor(@ApplicationContext private val context: Context) : Constants
 {
-    lateinit var sharedPreferences:SharedPreferences
+    private lateinit var sharedPreferences:SharedPreferences
 
     fun getSharedPrefs():SharedPreferences
     {

@@ -13,5 +13,6 @@ class MainActivityViewModel
     val preferences: DefaultSharedPreferences
 ) : ViewModel()
 {
-
+    init {
+    }
 }

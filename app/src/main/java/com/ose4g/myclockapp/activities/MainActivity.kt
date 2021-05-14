@@ -19,13 +19,13 @@ import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 
-lateinit var binding:ActivityMainBinding
+
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() ,Constants{
 
     lateinit var viewModel: MainActivityViewModel
-
+    lateinit var binding:ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //use data binding
