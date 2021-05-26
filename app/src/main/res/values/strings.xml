@@ -22,7 +22,7 @@
     <string name="alarms">Alarms</string>
     <string name="clock">Clock</string>
     <string name="style">Style</string>
-    <string name="display_time_seconds">Display time in seconds</string>
+    <string name="display_time_seconds">Display time with seconds</string>
     <string name="auto_home_clock">Automatic Home Clock</string>
     <string name="change_date_time">Change date and time</string>
     <string name="intelligent_voice_broadcast">Intelligent voice broadcast</string>
@@ -44,6 +44,7 @@
     <string name="key_set_day_time">set_date_and_time</string>
     <string name="ringtone">Ringtone</string>
     <string name="key_timer_ringtone">key_timer_ringtone</string>
+    <string name="automatic_home_time_summary">While travelling in an area where the ime is different, add a clock for home</string>
 
     <string-array name="clock_style_entries">
         <item>Analog</item>

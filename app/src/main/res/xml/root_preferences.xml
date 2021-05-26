@@ -2,7 +2,10 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <PreferenceCategory app:title="@string/clock"
-        app:iconSpaceReserved="false">
+        app:iconSpaceReserved="false"
+        app:allowDividerBelow="false"
+        app:allowDividerAbove="false"
+        >
 
         <ListPreference
             app:iconSpaceReserved="false"
@@ -11,21 +14,26 @@
             app:entryValues="@array/clock_style_values"
             app:entries="@array/clock_style_entries"
             app:useSimpleSummaryProvider="true"
-            app:defaultValue=""/>
+            app:defaultValue="0"
+            app:allowDividerAbove="false"
+            app:allowDividerBelow="true"/>
 
 
         <SwitchPreferenceCompat
             app:iconSpaceReserved="false"
             app:key="@string/key_display_seconds"
-            app:title="@string/display_time_seconds" />
+            app:title="@string/display_time_seconds"
+            app:allowDividerBelow="true"
+            app:allowDividerAbove="true"/>
 
 
         <SwitchPreferenceCompat
             app:iconSpaceReserved="false"
             app:key="@string/key_automatic_clock"
-            app:summaryOff="@string/attachment_summary_off"
-            app:summaryOn="@string/attachment_summary_on"
-            app:title="@string/auto_home_clock" />
+            app:summary="@string/automatic_home_time_summary"
+            app:title="@string/auto_home_clock"
+            app:allowDividerBelow="true"
+            app:allowDividerAbove="true"/>
 
         <ListPreference
             app:key="@string/key_home_time_zone"
@@ -34,13 +42,17 @@
             app:entryValues="@array/clock_style_entries"
             app:entries="@array/clock_style_entries"
             app:useSimpleSummaryProvider="true"
-            app:iconSpaceReserved="false" />
+            app:iconSpaceReserved="false"
+            app:allowDividerBelow="true"
+            app:allowDividerAbove="true"/>
 
 
 
         <Preference app:iconSpaceReserved="false"
             app:title="@string/change_date_time"
-            app:key="@string/key_set_day_time">
+            app:key="@string/key_set_day_time"
+            app:allowDividerBelow="true"
+            app:allowDividerAbove="true">
 
         </Preference>
 

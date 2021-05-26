@@ -8,6 +8,7 @@ import android.view.MenuItem
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.preference.ListPreference
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
@@ -43,7 +44,10 @@ class SettingsActivity : AppCompatActivity() {
         return true
     }
 
-    class SettingsFragment : PreferenceFragmentCompat() , Constants{
+
+
+    class SettingsFragment : PreferenceFragmentCompat() , Constants
+    {
 
         lateinit var openSettings: ActivityResultLauncher<Intent>
         lateinit var openRingtones: ActivityResultLauncher<Intent>
@@ -89,7 +93,13 @@ class SettingsActivity : AppCompatActivity() {
                 Log.i("clock_style",newValue.toString())
                 true
             }
+
         }
 
+        override fun onStart() {
+            super.onStart()
+            setDivider(ContextCompat.getDrawable(requireContext(),R.color.transparent_white))
+            setDividerHeight(1)
+        }
     }
 }

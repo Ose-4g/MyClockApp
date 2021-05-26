@@ -39,6 +39,5 @@
         <item name="android:textColor">@drawable/settings_text_color</item>
         <item name="android:textColorSecondary">@drawable/settings_text_color</item>
         <item name="alertDialogTheme">@style/DialogTheme</item>
-        <item name="android:divider">@color/white</item>
     </style>
 </resources>
