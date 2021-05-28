@@ -21,6 +21,7 @@ import androidx.core.os.postDelayed
 import java.text.SimpleDateFormat
 import java.util.*
 
+
 @AndroidEntryPoint
 class ClockFaceFragment : Fragment() {
 
@@ -68,6 +69,7 @@ class ClockFaceFragment : Fragment() {
             binding.realAnalogClock.visibility = View.GONE
         }
     }
+
 
     fun initializeValues()
     {
