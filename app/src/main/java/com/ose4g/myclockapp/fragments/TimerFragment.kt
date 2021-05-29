@@ -70,6 +70,14 @@ class TimerFragment : Fragment() {
 
         }
 
+        binding.delete.setOnLongClickListener {
+            _timeInput = ""
+            lifecycleScope.launch {
+                timeInput.emit(_timeInput)
+            }
+            true
+        }
+
 
         lifecycleScope.launch {
             timeInput.collect {
@@ -95,9 +103,6 @@ class TimerFragment : Fragment() {
             }
         }
 
-        lifecycleScope.launch {
-
-        }
 
 
         return binding.root
