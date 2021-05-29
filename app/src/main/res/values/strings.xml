@@ -42,6 +42,7 @@
     <string name="key_start_week_on">start_week_on</string>
     <string name="key_home_time_zone">home_time_zone</string>
     <string name="key_set_day_time">set_date_and_time</string>
+    <string name="key_last_position">set_last_position</string>
     <string name="ringtone">Ringtone</string>
     <string name="key_timer_ringtone">key_timer_ringtone</string>
     <string name="automatic_home_time_summary">While travelling in an area where the ime is different, add a clock for home</string>

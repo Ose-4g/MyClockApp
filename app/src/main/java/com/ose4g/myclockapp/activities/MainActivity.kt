@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import androidx.activity.viewModels
+import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.tabs.TabLayoutMediator
@@ -26,13 +27,18 @@ class MainActivity : AppCompatActivity() ,Constants{
 
     lateinit var viewModel: MainActivityViewModel
     lateinit var binding:ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //use data binding
         viewModel = ViewModelProvider(this).get(MainActivityViewModel::class.java)
         Log.i("seenin",viewModel.preferences.getClockStyle()!!)
 
+        //causes shared preferences to be initialized with default values.
+        viewModel.preferences.getClockStyle();
 
+
+        //binding of the current view
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
 
@@ -49,10 +55,11 @@ class MainActivity : AppCompatActivity() ,Constants{
 
         TabLayoutMediator(binding.tablayout, binding.viewpager2, TabLayoutMediator.TabConfigurationStrategy{
             tab, position ->
-            tab.icon = getDrawable(icons[position])
+            tab.icon = ContextCompat.getDrawable(this,icons[position])
         }).attach()
 
-
+        val position = viewModel.preferences.getLastPosition()
+        binding.viewpager2.setCurrentItem(position,true)
     }
 
 
@@ -74,5 +81,10 @@ class MainActivity : AppCompatActivity() ,Constants{
             }
         }
         return true
+    }
+
+    override fun onStop() {
+        viewModel.preferences.setLastPosition(binding.viewpager2.currentItem)
+        super.onStop()
     }
 }

@@ -49,8 +49,8 @@ class SettingsActivity : AppCompatActivity() {
     class SettingsFragment : PreferenceFragmentCompat() , Constants
     {
 
-        lateinit var openSettings: ActivityResultLauncher<Intent>
-        lateinit var openRingtones: ActivityResultLauncher<Intent>
+        private lateinit var openSettings: ActivityResultLauncher<Intent>
+        private lateinit var openRingtones: ActivityResultLauncher<Intent>
 
         override fun onCreate(savedInstanceState: Bundle?) {
             super.onCreate(savedInstanceState)
@@ -66,14 +66,14 @@ class SettingsActivity : AppCompatActivity() {
         override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
             setPreferencesFromResource(R.xml.root_preferences, rootKey)
 
-            var setTime = findPreference<Preference>(getString(KEY_SET_DAY_TIME))
+            val setTime = findPreference<Preference>(getString(KEY_SET_DAY_TIME))
             setTime?.onPreferenceClickListener = Preference.OnPreferenceClickListener {
                 openSettings.launch(Intent(android.provider.Settings.ACTION_DATE_SETTINGS))
                 true
             }
 
 
-            var ringtone = findPreference<Preference>(getString(KEY_TIMER_RINGTONE))
+            val ringtone = findPreference<Preference>(getString(KEY_TIMER_RINGTONE))
             ringtone?.onPreferenceClickListener = Preference.OnPreferenceClickListener {
                 Log.i("clicking in the main", "click click")
                 val manager = RingtoneManager(requireActivity())
@@ -88,7 +88,7 @@ class SettingsActivity : AppCompatActivity() {
             }
 
 
-            var clockStyle = findPreference<ListPreference>(getString(KEY_CLOCK_STYLE))
+            val clockStyle = findPreference<ListPreference>(getString(KEY_CLOCK_STYLE))
             clockStyle?.setOnPreferenceChangeListener { preference, newValue ->
                 Log.i("clock_style",newValue.toString())
                 true

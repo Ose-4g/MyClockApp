@@ -47,6 +47,9 @@ interface Constants
         get() = R.string.key_timer_ringtone
 
 
+    //Others
+    val KEY_LAST_POSITION:Int
+        get() = R.string.key_last_position
 
 
 }
